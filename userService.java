@@ -19,8 +19,8 @@ public class userService {
         };
         String[][] histories =
         {
-            {"maul@gmail.com","Fisika Dasar","Dasar Komputer dan Pemrograman","22-04-2020"},
-            {"peggy@gmail.com","Dasar Komputer dan Pemrograman","Konsep Jaringan Komputer","22-04-2020"}
+            {"maul@gmail.com","Fisika Dasar","Dasar Komputer dan Pemrograman","26-04-2020"},
+            {"peggy@gmail.com","Dasar Komputer dan Pemrograman","Konsep Jaringan Komputer","26-04-2020"}
         };
         this.data = data;
         this.histories = histories;
