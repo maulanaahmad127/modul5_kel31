@@ -1,32 +1,30 @@
-
-
 package modul5_kel31;
-
 import java.util.Scanner;
 
+
 public class userService {
-    private String[][] data = new String[2][3];
-    private String[][] histories = new String[2][6];
+	private String[][] data = new String[2][3];
+    private String[][] histories = new String[2][4];
     private String email, password, roles = "";
-    int hari;
+    int pinjaman;
+    
     public userService(String emails, String passwords)
     {
         email = emails;
         password = passwords;
         String[][] data = 
         { 
-            {"maul@gmail.com", "12345", "supedAdmin"},
+            {"maul@gmail.com", "12345", "superAdmin"},
             {"peggy@gmail.com", "12345", "user"} 
         };
         String[][] histories =
         {
-            {"maul@gmail.com", "senin", "selasa", "rabu", "kamis", "jum'at","26-04-2020"},
-            {"peggy@gmail.com", "senin", "selasa", "rabu", "kamis", "jum'at","26-04-2020"}
+            {"maul@gmail.com","Fisika Dasar","Dasar Komputer dan Pemrograman","22-04-2020"},
+            {"peggy@gmail.com","Dasar Komputer dan Pemrograman","Konsep Jaringan Komputer","22-04-2020"}
         };
         this.data = data;
         this.histories = histories;
     }
-
     
     private boolean checkCredential()
     {
@@ -36,8 +34,8 @@ public class userService {
             {
                 if(data[i][1].equals(password))
                 {
-                    if(data[i][0] == histories[i][0])
-                        hari = i;
+                    if (data[i][0] == histories[i][0])
+                        pinjaman = i;
                     roles = data[i][2];
                     return true;
                 }
@@ -46,27 +44,23 @@ public class userService {
         return false;
     }
     
-     
     public void login()
     {
         boolean status = checkCredential();
-       
         if(status == true)
         {
             System.out.println("\nWelcome " + roles);
             System.out.println("Logged it as user email " + email);
-            
-            System.out.println("Telah menghadiri kuliah " + email + " pada hari = " );
-            for (int i=1; i <= 5; i++){
-                System.out.println(histories[hari][i]);
+            System.out.println(email + " meminjam buku : ");
+            for (int i=1; i<3; i++){
+                System.out.println(histories[pinjaman][i]);
             }
-            System.out.println("Tercatat pada tanggal : " + histories[hari][6]);
+            System.out.println("Tanggal Pinjaman : " + histories[pinjaman][3]);
         }
         else
         {
             System.out.println("\nInvalid Login ");
         }
-       
     }
 
 	public static void main(String[] args) {
@@ -82,5 +76,3 @@ public class userService {
         display.login();
 	}
 }
-
-   
