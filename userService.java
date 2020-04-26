@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class userService {
     private String[][] data = new String[2][3];
-    private String[][] histories = new String[2][5];
+    private String[][] histories = new String[2][6];
     private String email, password, roles = "";
     int hari;
     public userService(String emails, String passwords)
@@ -20,8 +20,8 @@ public class userService {
         };
         String[][] histories =
         {
-            {"maul@gmail.com", "senin", "selasa", "rabu", "kamis", "jum'at"},
-            {"peggy@gmail.com", "senin", "selasa", "rabu", "kamis", "jum'at"}
+            {"maul@gmail.com", "senin", "selasa", "rabu", "kamis", "jum'at","26-04-2020"},
+            {"peggy@gmail.com", "senin", "selasa", "rabu", "kamis", "jum'at","26-04-2020"}
         };
         this.data = data;
         this.histories = histories;
@@ -60,6 +60,7 @@ public class userService {
             for (int i=1; i <= 5; i++){
                 System.out.println(histories[hari][i]);
             }
+            System.out.println("Tercatat pada tanggal : " + histories[hari][6]);
         }
         else
         {
