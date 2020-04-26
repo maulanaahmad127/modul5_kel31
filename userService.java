@@ -77,8 +77,8 @@ public class userService {
         System.out.print("Password : ");
         password = input.nextLine();
         
-        userService satu = new userService( email, password );
-        satu.login();
+        userService display = new userService( email, password );
+        display.login();
 	}
 }
 
